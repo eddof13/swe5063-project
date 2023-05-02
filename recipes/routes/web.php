@@ -25,6 +25,24 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/Ingrediant', function () {
+    return Inertia::render('Ingrediant', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::get('/Recipes', function () {
+    return Inertia::render('Recipes', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
 Route::get('/Categories', function () {
     return Inertia::render('Categories', [
         'canLogin' => Route::has('login'),
@@ -34,8 +52,8 @@ Route::get('/Categories', function () {
     ]);
 });
 
-Route::get('/Ingrediant', function () {
-    return Inertia::render('Ingrediant', [
+Route::get('/Toprated', function () {
+    return Inertia::render('Toprated', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -69,8 +87,6 @@ Route::get('/Dinner', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
