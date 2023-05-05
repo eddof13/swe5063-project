@@ -37,13 +37,13 @@ export default function Welcome(props) {
                 <div className="max-w-7xl mx-auto p-6 lg:p-8">
                     <div className="flex justify-center">
                     <h1 style={{float:"left", display:'inline-block'}} className="flex justify-center mt-20 text-4xl font-extrabold text-gray-900 dark:text-white">
-                    
+
                     </h1>
                         <img style={{width:"220%", height:"70%", padding:"3%"}} src="https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg">
                         </img>
-                         
+
                     </div>
-                    
+
                     <h1 className="flex justify-center mt-20 text-7xl font-extrabold text-gray-900 dark:text-white">
                         Quick Recipe
                     </h1>
@@ -51,7 +51,7 @@ export default function Welcome(props) {
                     <div className="mt-16">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                             <a
-                                href="https://laravel.com/docs"
+                                href="Categories"
                                 className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500"
                             >
                                 <div>
@@ -75,7 +75,7 @@ export default function Welcome(props) {
                             </a>
 
                             <a
-                                href="https://laracasts.com"
+                                href="Ingredients"
                                 className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500
                                 healthy2.jpg"
                             >
@@ -86,7 +86,7 @@ export default function Welcome(props) {
                                  </div>
                                     </div>
                                     <img style={{width:"125%", height:"50%", padding:"3%", justify:"center"}} src="https://www.seoclerk.com/pics/502447-3jpPhn1483443794.jpg">
-                        </img>
+                                    </img>
                                     <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
                                         Ingredients
                                     </h2>
@@ -96,7 +96,7 @@ export default function Welcome(props) {
                                     </p>
                                 </div>
 
-                                
+
                             </a>
 
                             <a
@@ -110,7 +110,7 @@ export default function Welcome(props) {
                                  </div>
                                     </div>
                                     <img style={{width:"300%", height:"60%", padding:"3%", justify:"center"}} src="https://i0.wp.com/selfrootedworld.com/wp-content/uploads/2020/05/Healthy-Breakfast-ideas-for-weight-loss.jpg?fit=960%2C640&ssl=1">
-                </img>
+                                    </img>
 
                                     <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
                                         Recipes
@@ -145,24 +145,6 @@ export default function Welcome(props) {
                                 </div>
 
                             </a>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
-                        <div className="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                            <div className="flex items-center gap-4">
-                                <a
-                                    href="Toprated"
-                                    className="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                >
-                        
-                                    Sponsor
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                            Laravel v{props.laravelVersion} (PHP v{props.phpVersion})
                         </div>
                     </div>
                 </div>
