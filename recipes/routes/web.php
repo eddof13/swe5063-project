@@ -34,66 +34,39 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/Ingrediant', function () {
-    return Inertia::render('Ingrediant', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+Route::get('/Ingredients', function () {
+    return Inertia::render('Ingredients', [
+        'ingredients' => App\Models\Category::where('type', 'ingredient')->get()
     ]);
 });
 
 Route::get('/Recipes', function () {
     return Inertia::render('Recipes', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'recipes' => App\Models\Recipe::all()
+    ]);
+});
+
+Route::get('/Recipes/by_category/{category}', function (string $category) {
+    return Inertia::render('Recipes', [
+        'recipes' => App\Models\Category::where('name', $category)->first()->recipes()->get()
+    ]);
+});
+
+Route::get('/Recipes/by_ingredient/{ingredient}', function (string $ingredient) {
+    return Inertia::render('Recipes', [
+        'recipes' => App\Models\Category::where('name', $ingredient)->first()->recipes()->get()
     ]);
 });
 
 Route::get('/Categories', function () {
     return Inertia::render('Categories', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'categories' => App\Models\Category::where('type', 'category')->get()
     ]);
 });
 
 Route::get('/Toprated', function () {
     return Inertia::render('Toprated', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
 
-Route::get('/Breakfast', function () {
-    return Inertia::render('Breakfast', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/Lunch', function () {
-    return Inertia::render('Lunch', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/Dinner', function () {
-    return Inertia::render('Dinner', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
     ]);
 });
 

@@ -1,13 +1,14 @@
 import { Link, Head } from '@inertiajs/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope,faList,faBowlRice,faStar } from '@fortawesome/free-solid-svg-icons';
 
-export default function Recipes(props) {
+
+export default function Ingredients(props) {
     return (
         <>
             <Head title="Welcome" />
             <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
                 <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous" ></link>
+                <script src='https://cdn.tailwindcss.com'></script>
                     {props.auth.user ? (
                         <Link
                             href={route('dashboard')}
@@ -36,31 +37,31 @@ export default function Recipes(props) {
 
                 <div className="max-w-7xl mx-auto p-6 lg:p-8">
                     <div className="flex justify-center">
-
-                        <a href="/"><img style={{width:"100%", height:"100%", padding:"5%"}} src="https://www.thestrengthandconditioningcoach.com/uploads/1/1/6/6/116639141/published/welcome-on-board-52.png?1615200024">
-                        </img></a>
-
+                     <a href="/"><img style = {{width:"100%", height:"100%"}} src="/../image/quickrecipe.jpg"
+                        className = "border: 1px solid #ddd border-radius:4px padding:5px max-width:100% height:auto"
+                       /></a>
                     </div>
 
-                    <h1 className="flex justify-center mt-20 text-5xl font-extrabold text-gray-900 dark:text-white">
-                        Recipes
-                    </h1>
+                    <div className="flex justify-center" >
+                       <h1 className="relative text-center right text-4xl font-extrabold text-gray-900">
+                       Ingredients
+                       </h1>
+                    </div>
+
                     <div className="mt-16">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        {props.recipes && props.recipes.map(recipe =>
+                        {props.ingredients && props.ingredients.map(ingredient =>
                             <a
-                                href=""
+                                href={'Recipes/by_ingredient/' + ingredient.name}
                                 className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500"
                             >
                             <div>
                                 <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white justify-center">
-                                        {recipe.name}
+                                        {ingredient.name}
                                     </h2>
-                                    <img style={{width:"90%", height:"40%", padding:"3%", justify:"center"}} src={recipe.photo}>
+                                    <img style={{width:"90%", height:"60%", padding:"3%", justify:"center"}} src={ingredient.image}>
                                     </img>
 
-                                    <div dangerouslySetInnerHTML={{__html: recipe.description}}>
-                                    </div>
                             </div>
                             </a>
                         )}

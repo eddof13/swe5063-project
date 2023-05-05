@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('text');
-            $table->binary('photo');
+            $table->string('photo');
             $table->foreignId('rating_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

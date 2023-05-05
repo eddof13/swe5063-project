@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cookbooks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->binary('photo');
+            $table->string('photo');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
