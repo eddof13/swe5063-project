@@ -42,19 +42,19 @@ Route::get('/Ingredients', function () {
 
 Route::get('/Recipes', function () {
     return Inertia::render('Recipes', [
-        'recipes' => App\Models\Recipe::all()
+        'recipes' => App\Models\Recipe::with('ingredients', 'instructions')->get()
     ]);
 });
 
 Route::get('/Recipes/by_category/{category}', function (string $category) {
     return Inertia::render('Recipes', [
-        'recipes' => App\Models\Category::where('name', $category)->first()->recipes()->get()
+        'recipes' => App\Models\Category::where('name', $category)->first()->recipes()->with('ingredients', 'instructions')->get()
     ]);
 });
 
 Route::get('/Recipes/by_ingredient/{ingredient}', function (string $ingredient) {
     return Inertia::render('Recipes', [
-        'recipes' => App\Models\Category::where('name', $ingredient)->first()->recipes()->get()
+        'recipes' => App\Models\Category::where('name', $ingredient)->first()->recipes()->with('ingredients', 'instructions')->get()
     ]);
 });
 

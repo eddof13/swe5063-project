@@ -54,13 +54,21 @@ export default function Recipes(props) {
                             >
                             <div>
                                 <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white justify-center">
-                                        {recipe.name}
-                                    </h2>
+                                    {recipe.name}
+                                </h2>
                                     <img style={{width:"90%", height:"40%", padding:"3%", justify:"center"}} src={recipe.photo}>
                                     </img>
+                                    {recipe.description}<br /><br />
 
-                                    <div dangerouslySetInnerHTML={{__html: recipe.description}}>
-                                    </div>
+                                    Ingredients:<br />
+                                    <ul>
+                                     {recipe.ingredients.map(ingredient => <li>{ingredient.quantity} {ingredient.name}</li>)}
+                                    </ul><br />
+
+                                    Instructions:<br />
+                                    <ul>
+                                     {recipe.instructions.map(instruction => <li>#{instruction.order}. {instruction.text}</li>)}
+                                    </ul>
                             </div>
                             </a>
                         )}
