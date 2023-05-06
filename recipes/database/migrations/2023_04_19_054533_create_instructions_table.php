@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('instructions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('recipe_id')->constrained()->cascadeOnDelete();
-            $table->string('prep_time');
-            $table->string('cook_time');
-            $table->string('text');
+            $table->string('prep_time')->nullable();
+            $table->string('cook_time')->nullable();
+            $table->text('text');
             $table->integer('order');
             $table->timestamps();
         });
