@@ -70,6 +70,12 @@ Route::get('/Toprated', function () {
     ]);
 });
 
+Route::get('/Create', function () {
+    return Inertia::render('Create', [
+
+    ]);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
